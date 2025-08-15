@@ -18,34 +18,10 @@ const services = [
     features: ["Component Selection", "Cable Management", "Performance Optimization", "Quality Testing"]
   },
   {
-    icon: Wrench,
-    title: "PC Repair & Upgrade",
-    description: "Professional repair services and component upgrades to keep your system running smoothly.",
-    features: ["Hardware Diagnostics", "Component Replacement", "Performance Upgrades", "Data Recovery"]
-  },
-  {
-    icon: Settings,
-    title: "System Optimization",
-    description: "Fine-tune your PC for maximum gaming performance and system stability.",
-    features: ["Software Optimization", "Driver Updates", "Overclocking", "Cooling Solutions"]
-  },
-  {
-    icon: Shield,
-    title: "Warranty & Support",
-    description: "Comprehensive warranty coverage and ongoing technical support for peace of mind.",
-    features: ["1-Year Warranty", "Remote Support", "Parts Replacement", "Priority Service"]
-  },
-  {
     icon: Package,
     title: "Pre-built Systems",
     description: "Ready-to-ship gaming PCs for immediate delivery and setup.",
     features: ["Instant Availability", "Pre-tested Systems", "Quick Setup", "Same-day Pickup"]
-  },
-  {
-    icon: HeadphonesIcon,
-    title: "Consultation",
-    description: "Expert advice on components, compatibility, and gaming requirements.",
-    features: ["Free Consultation", "Component Advice", "Budget Planning", "Future Upgrades"]
   }
 ];
 
@@ -71,7 +47,7 @@ const Services = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {services.map((service, index) => (
             <Card key={index} className="card-hover border-border bg-card/50 backdrop-blur-sm">
               <CardHeader className="space-y-4">
@@ -98,36 +74,6 @@ const Services = () => {
         </div>
 
         {/* Quick Stats */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div className="text-center">
-            <div className="flex items-center justify-center mb-2">
-              <Clock className="h-6 w-6 text-primary" />
-            </div>
-            <div className="text-2xl font-bold text-primary">24-48h</div>
-            <div className="text-sm text-muted-foreground">Average Build Time</div>
-          </div>
-          <div className="text-center">
-            <div className="flex items-center justify-center mb-2">
-              <Shield className="h-6 w-6 text-primary" />
-            </div>
-            <div className="text-2xl font-bold text-primary">1 Year</div>
-            <div className="text-sm text-muted-foreground">Warranty Coverage</div>
-          </div>
-          <div className="text-center">
-            <div className="flex items-center justify-center mb-2">
-              <HeadphonesIcon className="h-6 w-6 text-primary" />
-            </div>
-            <div className="text-2xl font-bold text-primary">24/7</div>
-            <div className="text-sm text-muted-foreground">Support Available</div>
-          </div>
-          <div className="text-center">
-            <div className="flex items-center justify-center mb-2">
-              <Wrench className="h-6 w-6 text-primary" />
-            </div>
-            <div className="text-2xl font-bold text-primary">500+</div>
-            <div className="text-sm text-muted-foreground">PCs Serviced</div>
-          </div>
-        </div>
       </div>
     </section>
   );

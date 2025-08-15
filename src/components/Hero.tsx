@@ -29,35 +29,11 @@ const Hero = () => {
               </h1>
               
               <p className="text-xl text-muted-foreground max-w-xl">
-                Custom gaming PCs designed and built locally. From entry-level builds to extreme performance rigs, we craft the perfect machine for your gaming needs.
+                Custom gaming PCs designed and built locally in Powell Ohio. From entry-level builds to extreme performance rigs, we craft the perfect machine for your gaming needs.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="glow-effect group">
-                Start Your Build
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/10">
-                View Gallery
-              </Button>
-            </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 pt-8">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary">500+</div>
-                <div className="text-sm text-muted-foreground">PCs Built</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary">5 Years</div>
-                <div className="text-sm text-muted-foreground">Experience</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary">24/7</div>
-                <div className="text-sm text-muted-foreground">Support</div>
-              </div>
-            </div>
           </div>
 
           {/* Image */}

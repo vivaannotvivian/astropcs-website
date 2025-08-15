@@ -5,16 +5,16 @@ import { Cpu, HardDrive, Monitor, Zap } from "lucide-react";
 
 const build = {
   id: 1,
-  name: "Performance Beast",
-  price: "$1,599",
+  name: "A Budget Beast",
+  price: "$575",
   specs: {
-    cpu: "Intel i7-13700K",
-    gpu: "RTX 4070 Ti",
-    ram: "32GB DDR5",
-    storage: "2TB NVMe SSD"
+    cpu: "AMD Ryzen 5 3500X",
+    gpu: "RX 590 8GB",
+    ram: "16GB DDR4",
+    storage: "500GB NVMe SSD"
   },
-  performance: "1440p Ultra Settings",
-  description: "High-performance gaming and content creation"
+  performance: "1080p Medium Settings",
+  description: "Competitive gaming at a budget. Perfect for FPS and MOBA games.",
 };
 
 const FeaturedBuilds = () => {
@@ -29,7 +29,7 @@ const FeaturedBuilds = () => {
               Featured Builds
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
+          <h2 className="text-1xl sm:text-3xl lg:text-4xl font-bold">
             Featured Build
             <span className="block text-gradient">PC Configuration</span>
           </h2>
@@ -43,9 +43,6 @@ const FeaturedBuilds = () => {
           <div className="w-full max-w-md">
             <Card className="relative card-hover border-border bg-card/50 backdrop-blur-sm ring-2 ring-primary">
               <div className="absolute -top-2 left-1/2 transform -translate-x-1/2">
-                <div className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-medium">
-                  Most Popular
-                </div>
               </div>
               
               <CardHeader className="space-y-4">
@@ -83,15 +80,6 @@ const FeaturedBuilds = () => {
                   </div>
                 </div>
               </CardContent>
-
-              <CardFooter className="space-y-3">
-                <Button className="w-full glow-effect">
-                  Customize Build
-                </Button>
-                <Button variant="ghost" className="w-full text-sm">
-                  View Full Specs
-                </Button>
-              </CardFooter>
             </Card>
           </div>
         </div>
@@ -99,11 +87,13 @@ const FeaturedBuilds = () => {
         {/* CTA */}
         <div className="text-center mt-12">
           <p className="text-muted-foreground mb-4">
-            Need something specific? We build custom PCs tailored to your exact needs.
+            Contact us to purchase this build or create your own unique gaming PC configuration.
           </p>
-          <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/10">
-            Request Custom Quote
-          </Button>
+          <a href="mailto:hello@gameforge.local?subject=PC%20Build%20Inquiry" style={{ textDecoration: "none" }}>
+            <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/10">
+              Contact Us
+            </Button>
+          </a>
         </div>
       </div>
     </section>
