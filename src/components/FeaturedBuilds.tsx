@@ -3,50 +3,19 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Badge } from "@/components/ui/badge";
 import { Cpu, HardDrive, Monitor, Zap } from "lucide-react";
 
-const builds = [
-  {
-    id: 1,
-    name: "Entry Gamer",
-    price: "$899",
-    popular: false,
-    specs: {
-      cpu: "AMD Ryzen 5 7600",
-      gpu: "RTX 4060",
-      ram: "16GB DDR5",
-      storage: "1TB NVMe SSD"
-    },
-    performance: "1080p High Settings",
-    description: "Perfect for 1080p gaming and everyday tasks"
+const build = {
+  id: 1,
+  name: "Performance Beast",
+  price: "$1,599",
+  specs: {
+    cpu: "Intel i7-13700K",
+    gpu: "RTX 4070 Ti",
+    ram: "32GB DDR5",
+    storage: "2TB NVMe SSD"
   },
-  {
-    id: 2,
-    name: "Performance Beast",
-    price: "$1,599",
-    popular: true,
-    specs: {
-      cpu: "Intel i7-13700K",
-      gpu: "RTX 4070 Ti",
-      ram: "32GB DDR5",
-      storage: "2TB NVMe SSD"
-    },
-    performance: "1440p Ultra Settings",
-    description: "High-performance gaming and content creation"
-  },
-  {
-    id: 3,
-    name: "Ultimate Rig",
-    price: "$2,999",
-    popular: false,
-    specs: {
-      cpu: "AMD Ryzen 9 7950X3D",
-      gpu: "RTX 4080 Super",
-      ram: "64GB DDR5",
-      storage: "4TB NVMe SSD"
-    },
-    performance: "4K Ultra Settings",
-    description: "No compromises, maximum performance"
-  }
-];
+  performance: "1440p Ultra Settings",
+  description: "High-performance gaming and content creation"
+};
 
 const FeaturedBuilds = () => {
   return (
@@ -61,28 +30,23 @@ const FeaturedBuilds = () => {
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
-            Ready-to-Game
-            <span className="block text-gradient">PC Configurations</span>
+            Featured Build
+            <span className="block text-gradient">PC Configuration</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Choose from our curated gaming PC builds or customize them to your exact specifications
+            Our signature gaming PC build optimized for high-performance gaming and content creation
           </p>
         </div>
 
-        {/* Builds Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {builds.map((build) => (
-            <Card
-              key={build.id}
-              className={`relative card-hover border-border bg-card/50 backdrop-blur-sm ${
-                build.popular ? 'ring-2 ring-primary' : ''
-              }`}
-            >
-              {build.popular && (
-                <Badge className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground">
+        {/* Build Card */}
+        <div className="flex justify-center">
+          <div className="w-full max-w-md">
+            <Card className="relative card-hover border-border bg-card/50 backdrop-blur-sm ring-2 ring-primary">
+              <div className="absolute -top-2 left-1/2 transform -translate-x-1/2">
+                <div className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-medium">
                   Most Popular
-                </Badge>
-              )}
+                </div>
+              </div>
               
               <CardHeader className="space-y-4">
                 <div className="flex items-center justify-between">
@@ -121,7 +85,7 @@ const FeaturedBuilds = () => {
               </CardContent>
 
               <CardFooter className="space-y-3">
-                <Button className="w-full glow-effect" variant={build.popular ? "default" : "outline"}>
+                <Button className="w-full glow-effect">
                   Customize Build
                 </Button>
                 <Button variant="ghost" className="w-full text-sm">
@@ -129,7 +93,7 @@ const FeaturedBuilds = () => {
                 </Button>
               </CardFooter>
             </Card>
-          ))}
+          </div>
         </div>
 
         {/* CTA */}
