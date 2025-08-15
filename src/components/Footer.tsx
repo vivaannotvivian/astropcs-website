@@ -11,7 +11,7 @@ const Footer = () => {
               <div className="p-2 rounded-lg bg-gradient-to-r from-primary to-accent">
                 <Zap className="h-6 w-6 text-background" />
               </div>
-              <span className="text-xl font-bold text-gradient">GameForge</span>
+              <span className="text-xl font-bold text-gradient">Astro PCs</span>
             </div>
             <p className="text-muted-foreground">
               Your local gaming PC experts, building dream machines since 2025.
