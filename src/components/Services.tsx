@@ -15,13 +15,13 @@ const services = [
     icon: Cpu,
     title: "Custom PC Builds",
     description: "Tailored gaming PCs built to your exact specifications and budget requirements.",
-    features: ["Component Selection", "Cable Management", "Performance Optimization", "Quality Testing"]
+    features: ["Component Selection", "Performance Optimization", "Quality Testing"]
   },
   {
     icon: Package,
-    title: "Pre-built Systems",
+    title: "Pre-Built Systems",
     description: "Ready-to-ship gaming PCs for immediate delivery and setup.",
-    features: ["Instant Availability", "Pre-tested Systems", "Quick Setup", "Same-day Pickup"]
+    features: ["Instant Availability", "Pre-tested Systems", "Quick Setup"]
   }
 ];
 

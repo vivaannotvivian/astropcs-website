@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -17,7 +18,17 @@ const build = {
   description: "Competitive gaming at a budget. Perfect for FPS and MOBA games.",
 };
 
+const benchmarks = [
+  { name: "No Benchmarks", score: "Coming Soon" }
+];
+
 const FeaturedBuilds = () => {
+  const [showBenchmarks, setShowBenchmarks] = useState(false);
+  const [current, setCurrent] = useState(0);
+
+  const handleNext = () => setCurrent((current + 1) % benchmarks.length);
+  const handlePrev = () => setCurrent((current - 1 + benchmarks.length) % benchmarks.length);
+
   return (
     <section id="builds" className="py-20 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -30,11 +41,10 @@ const FeaturedBuilds = () => {
             </span>
           </div>
           <h2 className="text-1xl sm:text-3xl lg:text-4xl font-bold">
-            Featured Build
-            <span className="block text-gradient">PC Configuration</span>
+            Current Builds
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Our signature gaming PC build optimized for high-performance gaming and content creation
+            Our signature gaming PC builds optimized for high-performance gaming and content creation
           </p>
         </div>
 
@@ -59,6 +69,53 @@ const FeaturedBuilds = () => {
                   <div className="text-sm text-muted-foreground">Performance</div>
                   <div className="font-semibold text-primary">{build.performance}</div>
                 </div>
+
+                {/* Benchmarks Popup Trigger */}
+                <div className="flex justify-center">
+                  <Button
+                    variant="secondary"
+                    size="sm"
+                    onClick={() => setShowBenchmarks(true)}
+                    className="mt-2"
+                  >
+                    View Benchmarks
+                  </Button>
+                </div>
+
+                {/* Benchmarks Popup */}
+                {showBenchmarks && (
+                  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
+                    <div className="bg-black rounded-lg shadow-lg p-6 w-80 relative">
+                      <button
+                        className="absolute top-2 right-2 text-muted-foreground"
+                        onClick={() => setShowBenchmarks(false)}
+                        aria-label="Close"
+                      >
+                        ×
+                      </button>
+                      <div className="flex flex-col items-center mt-2">
+    <label htmlFor="benchmarks" className="mb-1 text-sm text-white">
+      Select Benchmark
+    </label>
+    <select
+      id="benchmarks"
+      className="border rounded px-3 py-2 text-sm focus:outline-none focus:ring focus:border-primary bg-black text-white"
+      value={current}
+      onChange={e => setCurrent(Number(e.target.value))}
+    >
+      {benchmarks.map((b, idx) => (
+        <option key={b.name} value={idx}>
+          {b.name}
+        </option>
+      ))}
+    </select>
+    <div className="mt-3 text-center">
+      <div className="text-lg font-bold">{benchmarks[current].name}</div>
+      <div className="text-primary text-2xl font-semibold">{benchmarks[current].score}</div>
+    </div>
+  </div>
+ </div>
+</div>)}
 
                 {/* Specs */}
                 <div className="space-y-3">
@@ -89,7 +146,7 @@ const FeaturedBuilds = () => {
           <p className="text-muted-foreground mb-4">
             Contact us to purchase this build or create your own unique gaming PC configuration.
           </p>
-          <a href="mailto:hello@gameforge.local?subject=PC%20Build%20Inquiry" style={{ textDecoration: "none" }}>
+          <a href="mailto:AstroPcsBis@Gmail.com?subject=PC%20Build%20Inquiry" style={{ textDecoration: "none" }}>
             <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/10">
               Contact Us
             </Button>

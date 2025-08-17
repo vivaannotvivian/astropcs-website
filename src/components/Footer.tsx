@@ -27,20 +27,8 @@ const Footer = () => {
             <h3 className="text-lg font-semibold">Contact Info</h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4 text-primary" />
-                <span className="text-muted-foreground">(555) 123-GAME</span>
-              </div>
-              <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 text-primary" />
-                <span className="text-muted-foreground">hello@gameforge.local</span>
-              </div>
-              <div className="flex items-start space-x-2">
-                <MapPin className="h-4 w-4 text-primary mt-0.5" />
-                <span className="text-muted-foreground">
-                  123 Tech Street<br />
-                  Gaming District<br />
-                  Downtown, City 12345
-                </span>
+                <span className="text-muted-foreground">AstroPcsBis@gmail.com</span>
               </div>
             </div>
           </div>
